@@ -1,0 +1,36 @@
+{
+  "name": "quota-aware-claude",
+  "description": "Injects context fill % and API quota warnings into Claude Code sessions via hooks and an MCP server.",
+  "version": "0.1.0",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/quota_aware/hooks/stop.py"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/quota_aware/hooks/prompt.py"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "quota-aware-claude": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["${CLAUDE_PLUGIN_ROOT}/quota_aware/mcp/server.py"]
+    }
+  }
+}

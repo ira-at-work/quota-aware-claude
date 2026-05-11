@@ -1,0 +1,15 @@
+{
+  "name": "quota-aware-claude",
+  "description": "Context fill and API quota awareness for Claude Code CLI sessions.",
+  "owner": {
+    "name": "Ira Abramov",
+    "email": "ira@agrematch.com"
+  },
+  "plugins": [
+    {
+      "name": "quota-aware-claude",
+      "source": "./",
+      "description": "Stop hook + UserPromptSubmit hook + MCP server. Tracks context fill %, warns at 75/85/95%, accumulates rolling 5-hour quota. Pure Python stdlib, no dependencies."
+    }
+  ]
+}
