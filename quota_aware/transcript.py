@@ -18,8 +18,10 @@ def extract_last_usage(transcript_path: str) -> Optional[dict]:
                 continue
             try:
                 entry = json.loads(line)
-                if entry.get("type") == "result" and "usage" in entry:
-                    last_usage = entry["usage"]
+                if entry.get("type") == "assistant":
+                    usage = entry.get("message", {}).get("usage")
+                    if usage:
+                        last_usage = usage
             except (json.JSONDecodeError, KeyError):
                 continue
 
