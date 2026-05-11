@@ -5,6 +5,7 @@ import os
 import sys
 import time
 from pathlib import Path
+from typing import Optional
 
 sys.path.insert(0, os.environ.get("CLAUDE_PLUGIN_ROOT") or str(Path(__file__).parent.parent.parent))
 from quota_aware import state as state_mod
@@ -34,7 +35,7 @@ def err(req_id, code: int, message: str) -> dict:
     return {"jsonrpc": "2.0", "id": req_id, "error": {"code": code, "message": message}}
 
 
-def handle(req: dict) -> dict | None:
+def handle(req: dict) -> Optional[dict]:
     method = req.get("method", "")
     rid = req.get("id")
 
