@@ -20,7 +20,7 @@ Exposes two tools:
 ### Via plugin marketplace (recommended)
 
 ```shell
-/plugin marketplace add ira-abramov/quota-aware-claude
+/plugin marketplace add ira-at-work/quota-aware-claude
 /plugin install quota-aware-claude@quota-aware-claude
 ```
 

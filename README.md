@@ -29,7 +29,7 @@ Warnings re-arm automatically after a significant context drop (e.g. after `/com
 ### Plugin marketplace (recommended)
 
 ```shell
-/plugin marketplace add ira-abramov/quota-aware-claude
+/plugin marketplace add ira-at-work/quota-aware-claude
 /plugin install quota-aware-claude@quota-aware-claude
 ```
 
@@ -38,7 +38,7 @@ No restart needed.
 ### Manual
 
 ```bash
-git clone https://github.com/ira-abramov/quota-aware-claude ~/quota-aware-claude
+git clone https://github.com/ira-at-work/quota-aware-claude ~/quota-aware-claude
 cd ~/quota-aware-claude
 python3 install.py
 ```
